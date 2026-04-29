@@ -324,4 +324,17 @@ public class ProgramTests
             Assert.False(Program.Sum28(nums));
         }
     }
+    
+    [Theory]
+    [InlineData(new int[]{1, 4, 1}, true)]
+    [InlineData(new int[]{1, 4, 1, 4}, false)]
+    [InlineData(new int[]{1, 1}, true)]
+    public void More14_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected) {
+            Assert.True(Program.More14(nums));
+        } else {
+            Assert.False(Program.More14(nums));
+        }
+    }
 }
