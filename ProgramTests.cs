@@ -358,4 +358,20 @@ public class ProgramTests
     {
         Assert.Equal(Program.FizzArray(n), expected);
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 4, 1, 4 }, true)]
+    [InlineData(new int[] { 1, 4, 2, 4 }, false)]
+    [InlineData(new int[] { 1, 1 }, true)]
+    public void Only14_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.Only14(nums));
+        }
+        else
+        {
+            Assert.False(Program.Only14(nums));
+        }
+    }
 }
