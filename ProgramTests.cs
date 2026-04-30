@@ -230,7 +230,7 @@ public class ProgramTests
     {
         Assert.Equal(expected, Program.RedTicket(a, b, c));
     }
-    
+
     [Theory]
     [InlineData(1, 2, 3, 0)]
     [InlineData(2, 2, 2, 20)]
@@ -255,93 +255,105 @@ public class ProgramTests
     }
 
     [Theory]
-    [InlineData(new int[]{1, 2, 3, 13, 2}, 6)]
-    [InlineData(new int[]{1, 1}, 2)]
-    [InlineData(new int[]{1, 2, 13, 3, 2}, 5)]
+    [InlineData(new int[] { 1, 2, 3, 13, 2 }, 6)]
+    [InlineData(new int[] { 1, 1 }, 2)]
+    [InlineData(new int[] { 1, 2, 13, 3, 2 }, 5)]
     public void Sum13_ReturnsExpected(int[] nums, int expected)
     {
         Assert.Equal(expected, Program.Sum13(nums));
     }
 
     [Theory]
-    [InlineData(new int[]{1, 2, 3, 4, 100}, 3)]
-    [InlineData(new int[]{1, 1, 5, 5, 10, 8, 7}, 5)]
-    [InlineData(new int[]{-10, -4, -2, -4, -2, 0}, -3)]
+    [InlineData(new int[] { 1, 2, 3, 4, 100 }, 3)]
+    [InlineData(new int[] { 1, 1, 5, 5, 10, 8, 7 }, 5)]
+    [InlineData(new int[] { -10, -4, -2, -4, -2, 0 }, -3)]
     public void CenteredAverage_ReturnsExpected(int[] nums, int expected)
     {
         Assert.Equal(expected, Program.CenteredAverage(nums));
     }
 
     [Theory]
-    [InlineData(new int[]{1, 2, 2}, 5)]
-    [InlineData(new int[]{1, 2, 2, 6, 99, 99, 7}, 5)]
-    [InlineData(new int[]{1, 1, 6, 7, 2}, 4)]
-    [InlineData(new int[]{6, 7, 2}, 2)]
-    [InlineData(new int[]{1, 6, 7, 6, 7}, 1)]
-    [InlineData(new int[]{1, 6, 7, 2, 6, 99, 7}, 3)]
-    [InlineData(new int[]{1, 6, 99, 7, 7}, 8)]
-    [InlineData(new int[]{6, 7, 7}, 7)]
+    [InlineData(new int[] { 1, 2, 2 }, 5)]
+    [InlineData(new int[] { 1, 2, 2, 6, 99, 99, 7 }, 5)]
+    [InlineData(new int[] { 1, 1, 6, 7, 2 }, 4)]
+    [InlineData(new int[] { 6, 7, 2 }, 2)]
+    [InlineData(new int[] { 1, 6, 7, 6, 7 }, 1)]
+    [InlineData(new int[] { 1, 6, 7, 2, 6, 99, 7 }, 3)]
+    [InlineData(new int[] { 1, 6, 99, 7, 7 }, 8)]
+    [InlineData(new int[] { 6, 7, 7 }, 7)]
     public void Sum67_ReturnsExcpected(int[] nums, int expected)
     {
         Assert.Equal(Program.Sum67(nums), expected);
     }
 
     [Theory]
-    [InlineData(new int[]{1, 2, 2}, true)]
-    [InlineData(new int[]{1, 1, 2, 1, 5}, false)]
-    [InlineData(new int[]{1, 1, 0}, false)]
+    [InlineData(new int[] { 1, 2, 2 }, true)]
+    [InlineData(new int[] { 1, 1, 2, 1, 5 }, false)]
+    [InlineData(new int[] { 1, 1, 0 }, false)]
     public void Has22_ReturnsExpected(int[] nums, bool expected)
     {
-        if (expected) {
+        if (expected)
+        {
             Assert.True(Program.Has22(nums));
-        } else {
+        }
+        else
+        {
             Assert.False(Program.Has22(nums));
         }
     }
-    
+
     [Theory]
-    [InlineData(new int[]{0, 2, 4}, true)]
-    [InlineData(new int[]{1, 2, 3}, false)]
-    [InlineData(new int[]{1, 2, 4}, false)]
+    [InlineData(new int[] { 0, 2, 4 }, true)]
+    [InlineData(new int[] { 1, 2, 3 }, false)]
+    [InlineData(new int[] { 1, 2, 4 }, false)]
     public void Lucky13_ReturnsExpected(int[] nums, bool expected)
     {
-        if (expected) {
+        if (expected)
+        {
             Assert.True(Program.Lucky13(nums));
-        } else {
+        }
+        else
+        {
             Assert.False(Program.Lucky13(nums));
         }
     }
 
     [Theory]
-    [InlineData(new int[]{2, 3, 2, 2, 4, 2}, true)]
-    [InlineData(new int[]{2, 3, 2, 2, 4, 2, 2}, false)]
-    [InlineData(new int[]{1, 2, 3, 4}, false)]
+    [InlineData(new int[] { 2, 3, 2, 2, 4, 2 }, true)]
+    [InlineData(new int[] { 2, 3, 2, 2, 4, 2, 2 }, false)]
+    [InlineData(new int[] { 1, 2, 3, 4 }, false)]
     public void Sum28_ReturnsExpected(int[] nums, bool expected)
     {
-        if (expected) {
+        if (expected)
+        {
             Assert.True(Program.Sum28(nums));
-        } else {
+        }
+        else
+        {
             Assert.False(Program.Sum28(nums));
         }
     }
-    
+
     [Theory]
-    [InlineData(new int[]{1, 4, 1}, true)]
-    [InlineData(new int[]{1, 4, 1, 4}, false)]
-    [InlineData(new int[]{1, 1}, true)]
+    [InlineData(new int[] { 1, 4, 1 }, true)]
+    [InlineData(new int[] { 1, 4, 1, 4 }, false)]
+    [InlineData(new int[] { 1, 1 }, true)]
     public void More14_ReturnsExpected(int[] nums, bool expected)
     {
-        if (expected) {
+        if (expected)
+        {
             Assert.True(Program.More14(nums));
-        } else {
+        }
+        else
+        {
             Assert.False(Program.More14(nums));
         }
     }
-    
+
     [Theory]
-    [InlineData(4, new int[]{0, 1, 2, 3})]
-    [InlineData(1, new int[]{0})]
-    [InlineData(10, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})]
+    [InlineData(4, new int[] { 0, 1, 2, 3 })]
+    [InlineData(1, new int[] { 0 })]
+    [InlineData(10, new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 })]
     public void FizzArray_ReturnsExpected(int n, int[] expected)
     {
         Assert.Equal(Program.FizzArray(n), expected);
