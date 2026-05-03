@@ -374,4 +374,13 @@ public class ProgramTests
             Assert.False(Program.Only14(nums));
         }
     }
+    
+    [Theory]
+    [InlineData(4, new string[] { "0", "1", "2", "3" })]
+    [InlineData(1, new string[] { "0" })]
+    [InlineData(10, new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" })]
+    public void FizzArray2_ReturnsExpected(int n, string[] expected)
+    {
+        Assert.Equal(Program.FizzArray2(n), expected);
+    }
 }
