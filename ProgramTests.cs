@@ -399,4 +399,20 @@ public class ProgramTests
             Assert.False(Program.No14(nums));
         }
     }
+    
+    [Theory]
+    [InlineData(new int[] { 1, 2, 1, 3 }, 1, true)]
+    [InlineData(new int[] { 1, 2, 1, 3, 4 }, 2, false)]
+    [InlineData(new int[] { 1, 2, 1, 3, 4 }, 1, false)]
+    public void IsEverywhere_ReturnsExpected(int[] nums, int val, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.IsEverywhere(nums, val));
+        }
+        else
+        {
+            Assert.False(Program.IsEverywhere(nums, val));
+        }
+    }
 }
