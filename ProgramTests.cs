@@ -415,4 +415,20 @@ public class ProgramTests
             Assert.False(Program.IsEverywhere(nums, val));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 2 }, true)]
+    [InlineData(new int[] { 4, 4, 1 }, true)]
+    [InlineData(new int[] { 4, 4, 1, 1, 2, 2 }, false)]
+    public void Either24_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.Either24(nums));
+        }
+        else
+        {
+            Assert.False(Program.Either24(nums));
+        }
+    }
 }
