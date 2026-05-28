@@ -431,4 +431,13 @@ public class ProgramTests
             Assert.False(Program.Either24(nums));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 3 }, new int[]{ 2, 3, 10 }, 2)]
+    [InlineData(new int[] { 1, 2, 3 }, new int[]{ 2, 3, 5 }, 3)]
+    [InlineData(new int[] { 1, 2, 3 }, new int[]{ 2, 3, 3 }, 2)]
+    public void MatchUp_ReturnsExpected(int[] nums1, int[] nums2, int expected)
+    {
+        Assert.Equal(Program.MatchUp(nums1, nums2), expected);
+    }
 }
