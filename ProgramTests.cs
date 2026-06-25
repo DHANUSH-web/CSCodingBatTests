@@ -440,4 +440,20 @@ public class ProgramTests
     {
         Assert.Equal(Program.MatchUp(nums1, nums2), expected);
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 7, 7 }, true)]
+    [InlineData(new int[] { 1, 7, 1, 7 }, true)]
+    [InlineData(new int[] { 1, 7, 1, 1, 7 }, false)]
+    public void Has77_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.Has77(nums));
+        }
+        else
+        {
+            Assert.False(Program.Has77(nums));
+        }
+    }
 }
