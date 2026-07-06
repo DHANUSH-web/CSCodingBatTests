@@ -456,4 +456,21 @@ public class ProgramTests
             Assert.False(Program.Has77(nums));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 3, 2 }, true)]
+    [InlineData(new int[] { 1, 3, 1, 2 }, true)]
+    [InlineData(new int[] { 1, 3, 4, 2, 5 }, true)]
+    [InlineData(new int[] { 1 }, false)]
+    public void Has12_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.Has12(nums));
+        }
+        else
+        {
+            Assert.False(Program.Has12(nums));
+        }
+    }
 }
