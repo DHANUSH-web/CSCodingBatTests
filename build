@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PROJ_FILE="HelloWorldTests.csproj"
+PROJ_FILE="CSCodingBatTests.csproj"
 
 usage() {
 	cat <<EOF
@@ -60,7 +60,7 @@ case "$cmd" in
 		ensure_dotnet
 		cfg=${1:-Debug}
 		echo "🧪 Running tests (Configuration=${cfg})..."
-		if dotnet test HelloWorldTests.csproj -c "$cfg" --verbosity normal --logger "console;verbosity=detailed"; then
+		if dotnet test CSCodingBatTests.csproj -c "$cfg" --verbosity normal --logger "console;verbosity=detailed"; then
 			echo -e "\n✅ Tests passed"
 		else
 			echo -e "\n❌ Tests failed" >&2
