@@ -431,4 +431,46 @@ public class ProgramTests
             Assert.False(Program.Either24(nums));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 3 }, new int[]{ 2, 3, 10 }, 2)]
+    [InlineData(new int[] { 1, 2, 3 }, new int[]{ 2, 3, 5 }, 3)]
+    [InlineData(new int[] { 1, 2, 3 }, new int[]{ 2, 3, 3 }, 2)]
+    public void MatchUp_ReturnsExpected(int[] nums1, int[] nums2, int expected)
+    {
+        Assert.Equal(Program.MatchUp(nums1, nums2), expected);
+    }
+
+    [Theory]
+    [InlineData(new int[] { 1, 7, 7 }, true)]
+    [InlineData(new int[] { 1, 7, 1, 7 }, true)]
+    [InlineData(new int[] { 1, 7, 1, 1, 7 }, false)]
+    public void Has77_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.Has77(nums));
+        }
+        else
+        {
+            Assert.False(Program.Has77(nums));
+        }
+    }
+
+    [Theory]
+    [InlineData(new int[] { 1, 3, 2 }, true)]
+    [InlineData(new int[] { 1, 3, 1, 2 }, true)]
+    [InlineData(new int[] { 1, 3, 4, 2, 5 }, true)]
+    [InlineData(new int[] { 1 }, false)]
+    public void Has12_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.Has12(nums));
+        }
+        else
+        {
+            Assert.False(Program.Has12(nums));
+        }
+    }
 }
