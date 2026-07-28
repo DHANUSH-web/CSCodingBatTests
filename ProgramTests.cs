@@ -489,4 +489,19 @@ public class ProgramTests
             Assert.False(Program.ModThree(nums));
         }
     }
-}
+
+    [Theory]
+    [InlineData(new int[] { 3, 1, 3, 1, 3 }, true)]
+    [InlineData(new int[] { 3, 1, 3, 3 }, false)]
+    [InlineData(new int[] { 3, 4, 3, 3, 4 }, false)]
+    public void HaveThree_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.HaveThree(nums));
+        }
+        else
+        {
+            Assert.False(Program.HaveThree(nums));
+        }
+    }}
