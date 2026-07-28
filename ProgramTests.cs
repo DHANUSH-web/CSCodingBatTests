@@ -473,4 +473,20 @@ public class ProgramTests
             Assert.False(Program.Has12(nums));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 2, 1, 3, 5 }, true)]
+    [InlineData(new int[] { 2, 1, 2, 5 }, false)]
+    [InlineData(new int[] { 2, 4, 2, 5 }, true)]
+    public void ModThree_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.ModThree(nums));
+        }
+        else
+        {
+            Assert.False(Program.ModThree(nums));
+        }
+    }
 }
