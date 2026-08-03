@@ -506,4 +506,5 @@ public class ProgramTests
         {
             Assert.False(Program.HaveThree(nums));
         }
-    }}
+    }
+}
