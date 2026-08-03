@@ -507,4 +507,20 @@ public class ProgramTests
             Assert.False(Program.HaveThree(nums));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 4, 2, 2, 3 }, true)]
+    [InlineData(new int[] { 2, 2, 4 }, true)]
+    [InlineData(new int[] { 2, 2, 4, 2 }, false)]
+    public void TwoTwo_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.TwoTwo(nums));
+        }
+        else
+        {
+            Assert.False(Program.TwoTwo(nums));
+        }
+    }
 }
