@@ -1,4 +1,6 @@
-namespace HelloWorld.Tests;
+using CSCodingBat;
+
+namespace CSCodingBatTests;
 
 public class ProgramTests
 {
