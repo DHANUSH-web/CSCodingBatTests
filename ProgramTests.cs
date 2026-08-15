@@ -539,4 +539,20 @@ public class ProgramTests
             Assert.False(Program.SameEnds(nums, len));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 3, 1, 2 }, true)]
+    [InlineData(new int[] { 1, 2, 3 }, true)]
+    [InlineData(new int[] { 1, 2, 4 }, false)]
+    public void TripleUp_ReturnsExpected(int[] nums, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.TripleUp(nums));
+        }
+        else
+        {
+            Assert.False(Program.TripleUp(nums));
+        }
+    }
 }
