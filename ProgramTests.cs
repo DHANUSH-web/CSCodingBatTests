@@ -523,4 +523,20 @@ public class ProgramTests
             Assert.False(Program.TwoTwo(nums));
         }
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 3, 1, 2 }, 1, false)]
+    [InlineData(new int[] { 1, 2, 3, 1, 2 }, 2, true)]
+    [InlineData(new int[] { 1, 2, 3, 1, 2 }, 3, false)]
+    public void SameEnds_ReturnsExpected(int[] nums, int len, bool expected)
+    {
+        if (expected)
+        {
+            Assert.True(Program.SameEnds(nums, len));
+        }
+        else
+        {
+            Assert.False(Program.SameEnds(nums, len));
+        }
+    }
 }
