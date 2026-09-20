@@ -555,4 +555,22 @@ public class ProgramTests
             Assert.False(Program.TripleUp(nums));
         }
     }
+
+    [Theory]
+    [InlineData(5, 10, new int[] { 5, 6, 7, 8, 9 })]
+    [InlineData(11, 18, new int[] { 11, 12, 13, 14, 15, 16, 17 })]
+    [InlineData(1, 3, new int[] { 1, 2 })]
+    public void FizzArray3_ReturnsExpected(int start, int end, int[] expected)
+    {
+        Assert.Equal(Program.FizzArray3(start, end), expected);
+    }
+
+    [Theory]
+    [InlineData(new int[] { 5, 1, 2, 3, 4 }, new int[] { 1, 2, 3, 4, 5 })]
+    [InlineData(new int[] { 1, 2 }, new int[] { 2, 1 })]
+    [InlineData(new int[] { 1 }, new int[] { 1 })]
+    public void ShiftLeft_ReturnExpected(int[] nums, int[] expected)
+    {
+        Assert.Equal(Program.ShiftLeft(nums), expected);
+    }
 }
