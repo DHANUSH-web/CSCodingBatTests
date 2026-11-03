@@ -573,4 +573,13 @@ public class ProgramTests
     {
         Assert.Equal(Program.ShiftLeft(nums), expected);
     }
+
+    [Theory]
+    [InlineData(new int[] { 1, 2, 4, 1 }, new int[] { 1, 2 })]
+    [InlineData(new int[] { 3, 1, 4 }, new int[] { 3, 1 })]
+    [InlineData(new int[] { 1, 4, 4 }, new int[] { 1 })]
+    public void Pre4_ReturnExpected(int[] nums, int[] expected)
+    {
+        Assert.Equal(Program.Pre4(nums), expected);
+    }
 }
