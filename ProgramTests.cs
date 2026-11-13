@@ -582,4 +582,13 @@ public class ProgramTests
     {
         Assert.Equal(Program.Pre4(nums), expected);
     }
+
+    [Theory]
+    [InlineData(new int[] { 2, 4, 1, 2 }, new int[] { 1, 2 })]
+    [InlineData(new int[] { 4, 1, 4, 2 }, new int[] { 2 })]
+    [InlineData(new int[] { 4, 4, 1, 2, 3 }, new int[] { 1, 2, 3 })]
+    public void Post4_ReturnExpected(int[] nums, int[] expected)
+    {
+        Assert.Equal(Program.Post4(nums), expected);
+    }
 }
